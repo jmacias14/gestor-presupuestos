@@ -147,7 +147,14 @@ export default function VerPresupuestos() {
               <CardHeader className="pb-3">
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
-                    <CardTitle className="text-xl mb-2">{presupuesto.titulo}</CardTitle>
+                    <CardTitle className="text-xl mb-2">
+                      <Link
+                        href={`/presupuestos/${presupuesto.id}`}
+                        className="hover:text-blue-600 transition-colors cursor-pointer"
+                      >
+                        {presupuesto.titulo}
+                      </Link>
+                    </CardTitle>
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <Calendar className="h-4 w-4" />
                       <span>Fecha límite: {formatearFecha(presupuesto.fecha_limite)}</span>
